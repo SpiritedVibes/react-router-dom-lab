@@ -19,14 +19,12 @@ const initialState = [
 ]
 
 const App = () => {
-  
   const [mailboxes, setMailboxes] = useState(initialState)
-
 
   const addBox = (newBoxData) => {
     newBoxData._id = mailboxes.length + 1
     setMailboxes([...mailboxes, newBoxData])
-  };
+  }
 
   return (
     <>

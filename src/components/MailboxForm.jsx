@@ -5,7 +5,7 @@ const initialState = {
   _id: 0,
   boxSize: '',
   boxholder: '',
-};
+}
 
 const MailboxForm = (props) => {
   const [formData, setFormData] = useState(initialState)
@@ -19,7 +19,10 @@ const MailboxForm = (props) => {
   }
 
   const handleChange = ({ target }) => {
-    setFormData({ ...formData, [target.name]: target.value })
+    setFormData({ 
+      ...formData, 
+      [target.name]: target.name === '_id' ? Number(target.value) : target.value 
+    })
   }
 
   return (
